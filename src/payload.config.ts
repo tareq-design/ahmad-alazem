@@ -1,5 +1,7 @@
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
+import { en } from '@payloadcms/translations/languages/en'
+import { ar } from '@payloadcms/translations/languages/ar'
 
 import sharp from 'sharp' // sharp-import
 import path from 'path'
@@ -67,6 +69,25 @@ export default buildConfig({
   collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
+  i18n: {
+    supportedLanguages: { en, ar },
+    fallbackLanguage: 'en',
+  },
+  localization: {
+    locales: [
+      {
+        label: 'English',
+        code: 'en',
+      },
+      {
+        label: 'Arabic',
+        code: 'ar',
+        rtl: true,
+      },
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+  },
   plugins: [
     ...plugins,
     vercelBlobStorage({

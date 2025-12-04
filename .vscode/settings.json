@@ -36,5 +36,10 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
     }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#382838",
+    "titleBar.activeBackground": "#4F394E",
+    "titleBar.activeForeground": "#FBFAFB"
   }
 }
