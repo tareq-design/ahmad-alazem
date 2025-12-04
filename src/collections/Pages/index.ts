@@ -95,15 +95,12 @@ export const Pages: CollectionConfig<'pages'> = {
             }),
             MetaTitleField({
               hasGenerateFn: true,
-              localized: true,
             }),
             MetaImageField({
               relationTo: 'media',
             }),
 
-            MetaDescriptionField({
-              localized: true,
-            }),
+            MetaDescriptionField(),
             PreviewField({
               // if the `generateUrl` function is configured
               hasGenerateFn: true,
